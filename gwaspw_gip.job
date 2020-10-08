@@ -1,0 +1,22 @@
+#!/bin/bash
+#SBATCH --job-name=gwaspw_gip
+#SBATCH -o gwaspw_gip.out
+#SBATCH --account=minmanni
+#SBATCH --time=4:00:00
+#SBATCH --mem-per-cpu=6000
+#SBATCH --partition=small
+#SBATCH --mail-type=END
+#SBATCH --mail-user=v.karhunen@imperial.ac.uk
+
+module load gsl
+module load boost
+
+for outcome in CAD AD CP CKD BUN eGFR strokeAS strokeLAS strokeCE strokeSVS PAD BMI SBP CRP HDL LDL TG ALT
+do
+/projappl/minmanni/gwas-pw -i gwaspw_HbA1cUKBB_${outcome}_GIP.txt -o gwaspw_hba1cukbb_${outcome}_gip -bed gip_gene.bed -phenos HbA1cUKBB ${outcome}
+done
+
+for outcome in CAD AD CP CKD BUN eGFR strokeAS strokeLAS strokeCE strokeSVS PAD BMI SBP CRP HDL LDL TG ALT
+do
+/projappl/minmanni/gwas-pw -i gwaspw_HbA1cUKBB_${outcome}_GIPR.txt -o gwaspw_hba1cukbb_${outcome}_gipr -bed gipr_gene.bed -phenos HbA1cUKBB ${outcome}
+done
