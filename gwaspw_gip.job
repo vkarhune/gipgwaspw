@@ -21,12 +21,12 @@ do
 /projappl/minmanni/gwas-pw -i gwaspw_HbA1cUKBB_${outcome}_GIPR.txt -o gwaspw_hba1cukbb_${outcome}_gipr -bed gipr_gene.bed -phenos HbA1cUKBB ${outcome}
 done
 
-for outcome in CAD AD CP CKD BUN eGFR strokeAS strokeLAS strokeCE strokeSVS PAD BMI SBP CRP HDL LDL TG ALT
+for outcome in CAD AD CP CKD BUN eGFR strokeAS strokeLAS strokeCE strokeSVS PAD BMI SBP CRP HDL LDL TG ALT HbA1cUKBB
     do
     /projappl/minmanni/gwas-pw -i gwaspw_T2DM_${outcome}_GIP.txt -o gwaspw_t2dm_${outcome}_gip -bed gip_gene.bed -phenos T2DM ${outcome}
     done
     
-    for outcome in CAD AD CP CKD BUN eGFR strokeAS strokeLAS strokeCE strokeSVS PAD BMI SBP CRP HDL LDL TG ALT
+    for outcome in CAD AD CP CKD BUN eGFR strokeAS strokeLAS strokeCE strokeSVS PAD BMI SBP CRP HDL LDL TG ALT HbA1cUKBB
     do
     /projappl/minmanni/gwas-pw -i gwaspw_T2DM_${outcome}_GIPR.txt -o gwaspw_t2dm_${outcome}_gipr -bed gipr_gene.bed -phenos T2DM ${outcome}
     done
